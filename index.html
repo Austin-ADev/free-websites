@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Websites by Austin</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f4f8;
+      color: #333;
+      overflow-x: hidden;
+    }
+    header {
+      background: #222;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      animation: fadeIn 1s ease-out;
+    }
+    nav a {
+      margin: 0 1rem;
+      color: #ddd;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #fff;
+    }
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      color: white;
+      animation: slideUp 1s ease-out;
+    }
+    .cta {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background: white;
+      color: #00f2fe;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.3s;
+    }
+    .cta:hover {
+      transform: scale(1.1);
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #eee;
+      font-size: 0.9rem;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Free Websites by Austin</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="contact.html">Contact</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <h2>Need a Website? I’ll Build It for Free.</h2>
+      <p>Whether it’s a portfolio, store, or blog—submit your idea and I’ll make it happen.</p>
+      <a href="contact.html" class="cta">Submit Your Idea</a>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 Austin's Free Web Services</p>
+  </footer>
+  <script>
+    document.querySelector('.cta').addEventListener('click', () => {
+      console.log('CTA clicked – Joe’s legacy expands.');
+    });
+  </script>
+</body>
+</html>
