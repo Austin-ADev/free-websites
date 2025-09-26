@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Submit Your Website Idea</title>
+  <title>Austin's Free Website Service</title>
   <style>
     body {
       margin: 0;
@@ -11,49 +11,39 @@
       background: #f0f4f8;
       color: #333;
     }
-    header {
+    header, footer {
       background: #222;
       color: white;
-      padding: 1rem;
       text-align: center;
-      animation: fadeIn 1s ease-out;
+      padding: 1rem;
     }
     nav a {
       margin: 0 1rem;
       color: #ddd;
       text-decoration: none;
-      transition: color 0.3s;
     }
     nav a:hover {
       color: #fff;
     }
     main {
       padding: 2rem;
-      animation: slideUp 1s ease-out;
+      max-width: 600px;
+      margin: auto;
     }
     .example {
-      max-width: 600px;
-      margin: 2rem auto;
       text-align: center;
-      animation: fadeIn 1s ease-out;
+      margin-bottom: 2rem;
     }
     .example img {
       width: 100%;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
-    .example img:hover {
-      transform: scale(1.02);
     }
     form {
-      max-width: 600px;
-      margin: auto;
       background: white;
       padding: 2rem;
       border-radius: 8px;
       box-shadow: 0 0 20px rgba(0,0,0,0.1);
-      animation: pulseIn 1s ease-out;
     }
     label {
       display: block;
@@ -66,11 +56,6 @@
       margin-top: 0.5rem;
       border: 1px solid #ccc;
       border-radius: 4px;
-      transition: box-shadow 0.3s;
-    }
-    input:focus, textarea:focus {
-      box-shadow: 0 0 5px #4facfe;
-      outline: none;
     }
     button {
       margin-top: 1.5rem;
@@ -81,28 +66,9 @@
       border-radius: 5px;
       font-weight: bold;
       cursor: pointer;
-      transition: transform 0.3s;
-    }
-    button:hover {
-      transform: scale(1.05);
     }
     footer {
-      text-align: center;
-      padding: 1rem;
-      background: #eee;
       font-size: 0.9rem;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes slideUp {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes pulseIn {
-      from { opacity: 0; transform: scale(0.95); }
-      to { opacity: 1; transform: scale(1); }
     }
   </style>
 </head>
@@ -118,7 +84,7 @@
   <main>
     <section class="example">
       <h2>Example Mockup</h2>
-      <p>Here’s a sample layout to spark ideas. You can sketch yours by hand, use a design tool, or describe it in words.</p>
+      <p>Here’s a sample layout to spark ideas.</p>
       <img src="assets/mockup-example.png" alt="Sample website mockup" />
     </section>
 
@@ -133,18 +99,15 @@
       <textarea id="idea" name="idea" rows="5" required></textarea>
 
       <label for="mockup">Upload a Mockup (optional)</label>
-      <input type="file" id="mockup" name="mockup" accept="image/*,pdf" />
+<input type="file" id="mockup" name="mockup" accept="image/*,pdf" />
 
+<label for="mockupText">Or Paste a Mockup Description / Link</label>
+<textarea id="mockupText" name="mockupText" rows="4" placeholder="Paste a sketch, layout idea, or Figma/Canva link…"></textarea>
       <button type="submit">Submit</button>
     </form>
   </main>
   <footer>
     <p>© 2025 Joe's Free Web Services</p>
   </footer>
-  <script>
-    document.querySelector('form').addEventListener('submit', () => {
-      console.log('Form submitted – Joe’s next legacy site is underway.');
-    });
-  </script>
 </body>
 </html>
