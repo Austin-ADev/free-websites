@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Joe’s Free Website Service</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f4f8;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+    header, footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+    nav a {
+      margin: 0 1rem;
+      color: #ddd;
+      text-decoration: none;
+    }
+    nav a:hover {
+      color: #fff;
+    }
+    section {
+      padding: 3rem 1rem;
+      max-width: 800px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease-out;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    h2 {
+      color: #4facfe;
+    }
+    footer {
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>About This Service</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="contact.html">Contact</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>Why Free?</h2>
+    <p>I believe everyone deserves a great website. This project is my way of giving back, building legacy-grade sites for creators, dreamers, and founders—no cost, no catch.</p>
+  </section>
+
+  <section>
+    <h2>Timeline</h2>
+    <p>Each site takes up to <strong>7 days</strong> to complete. I’ll keep you updated throughout the build, and you’ll receive a polished, responsive site ready to launch.</p>
+  </section>
+
+  <section>
+    <h2>Default URL</h2>
+    <p>Your site will be hosted at:</p>
+    <code>https://joesites.github.io/yourname</code>
+    <p>If you have a custom domain, I’ll help you wire it in—just mention it in your submission.</p>
+  </section>
+
+  <section>
+    <h2>What You Get</h2>
+    <ul>
+      <li>Responsive design (mobile + desktop)</li>
+      <li>Fast, clean code</li>
+      <li>GitHub Pages hosting</li>
+      <li>Optional custom domain setup</li>
+      <li>Legacy-grade polish and attention to detail</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Who I Am</h2>
+    <p>I’m Joe—a mutation-grade builder, creative director, and legacy architect. Every site I build is a ritual, every submission a chance to create something unforgettable.</p>
+  </section>
+
+  <footer>
+    <p>© 2025 Joe's Free Web Services</p>
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+      });
+    }, { threshold: 0.1 });
+    sections.forEach(section => observer.observe(section));
+  </script>
+</body>
+</html>
