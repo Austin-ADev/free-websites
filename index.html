@@ -3,37 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Free Websites by Austin</title>
+  <title>Austin's Free Website Service</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background: #f0f4f8;
       color: #333;
-      overflow-x: hidden;
+      scroll-behavior: smooth;
     }
-    header {
+    header, footer {
       background: #222;
       color: white;
-      padding: 1rem;
       text-align: center;
-      animation: fadeIn 1s ease-out;
+      padding: 1rem;
     }
     nav a {
       margin: 0 1rem;
       color: #ddd;
       text-decoration: none;
-      transition: color 0.3s;
     }
     nav a:hover {
       color: #fff;
     }
-    .hero {
-      text-align: center;
+    section {
       padding: 3rem 1rem;
+      max-width: 800px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease-out;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .hero {
       background: linear-gradient(to right, #4facfe, #00f2fe);
       color: white;
-      animation: slideUp 1s ease-out;
+      text-align: center;
+      padding: 4rem 1rem;
     }
     .cta {
       display: inline-block;
@@ -44,50 +53,69 @@
       border-radius: 5px;
       text-decoration: none;
       font-weight: bold;
-      transition: transform 0.3s;
     }
-    .cta:hover {
-      transform: scale(1.1);
+    h2 {
+      color: #4facfe;
     }
     footer {
-      text-align: center;
-      padding: 1rem;
-      background: #eee;
       font-size: 0.9rem;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes slideUp {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Free Websites by Austin</h1>
+    <h1>Austin's Free Website Service</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="contact.html">Contact</a>
       <a href="about.html">About</a>
     </nav>
   </header>
-  <main>
-    <section class="hero">
-      <h2>Need a Website? I’ll Build It for Free.</h2>
-      <p>Whether it’s a portfolio, store, or blog—submit your idea and I’ll make it happen.</p>
-      <a href="contact.html" class="cta">Submit Your Idea</a>
-    </section>
-  </main>
+
+  <section class="hero">
+    <h2>Need a Website? I’ll Build It for Free.</h2>
+    <p>Submit your idea, and I’ll deliver a custom site in 7 days. No catch. Just creation.</p>
+    <a href="contact.html" class="cta">Submit Your Idea</a>
+  </section>
+
+  <section>
+    <h2>What I Build</h2>
+    <p>Portfolios, blogs, stores, landing pages, and more. Every site is responsive, fast, and hosted for free.</p>
+  </section>
+
+  <section>
+    <h2>How It Works</h2>
+    <ol>
+      <li>You submit your idea and mockup.</li>
+      <li>I build your site in 7 days.</li>
+      <li>You get a live URL: <code>austinsites.github.io/yourwebsitename</code>.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Testimonials</h2>
+    <p>“Austin made my portfolio in a week. It looks better than paid services.” — Alex</p>
+    <p>“I submitted a sketch and got a full site. Unreal.” — Maya</p>
+  </section>
+
+  <section>
+    <h2>FAQ</h2>
+    <p><strong>Is this really free?</strong> Yes. I do this to help people and build my legacy.</p>
+    <p><strong>Can I use my own domain?</strong> Yes, just mention it in your submission. You have to find somethings for it to work.</p>
+  </section>
+
   <footer>
     <p>© 2025 Austin's Free Web Services</p>
   </footer>
+
   <script>
-    document.querySelector('.cta').addEventListener('click', () => {
-      console.log('CTA clicked – Joe’s legacy expands.');
-    });
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+      });
+    }, { threshold: 0.1 });
+    sections.forEach(section => observer.observe(section));
   </script>
 </body>
 </html>
