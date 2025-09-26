@@ -3,29 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Joe’s Free Website Service</title>
+  <title>About Austin’s Free Website Service</title>
   <style>
+    :root {
+      --primary: #4facfe;
+      --accent: #00f2fe;
+      --dark: #222;
+      --light: #f0f4f8;
+      --text: #333;
+      --radius: 8px;
+    }
+
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: #f0f4f8;
-      color: #333;
+      background: var(--light);
+      color: var(--text);
       scroll-behavior: smooth;
     }
+
     header, footer {
-      background: #222;
+      background: var(--dark);
       color: white;
       text-align: center;
       padding: 1rem;
     }
+
     nav a {
       margin: 0 1rem;
       color: #ddd;
       text-decoration: none;
     }
+
     nav a:hover {
-      color: #fff;
+      color: white;
     }
+
     section {
       padding: 3rem 1rem;
       max-width: 800px;
@@ -34,13 +47,27 @@
       transform: translateY(40px);
       transition: all 0.8s ease-out;
     }
+
     section.visible {
       opacity: 1;
       transform: translateY(0);
     }
+
     h2 {
-      color: #4facfe;
+      color: var(--primary);
+      margin-bottom: 1rem;
     }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    code {
+      background: #eee;
+      padding: 0.2rem 0.4rem;
+      border-radius: var(--radius);
+    }
+
     footer {
       font-size: 0.9rem;
     }
@@ -57,19 +84,19 @@
   </header>
 
   <section>
-    <h2>Why Free?</h2>
-    <p>I believe everyone deserves a great website. This project is my way of giving back, building legacy-grade sites for creators, dreamers, and founders—no cost, no catch.</p>
+    <h2>Why I Build for Free</h2>
+    <p>I believe everyone deserves a great website—whether you're launching a project, sharing your story, or building a brand. This service is my way of giving back, helping creators and dreamers go live without barriers. Every site I build is a legacy artifact, crafted with care and delivered with pride.</p>
   </section>
 
   <section>
     <h2>Timeline</h2>
-    <p>Each site takes up to <strong>7 days</strong> to complete. I’ll keep you updated throughout the build, and you’ll receive a polished, responsive site ready to launch.</p>
+    <p>Once you submit your idea, I’ll build your site within <strong>7 days</strong>. You’ll get updates along the way, and I’ll make sure it’s responsive, fast, and polished.</p>
   </section>
 
   <section>
-    <h2>Default URL</h2>
+    <h2>Default Hosting</h2>
     <p>Your site will be hosted at:</p>
-    <code>https://joesites.github.io/yourname</code>
+    <code>https://austinsites.github.io/yourwebsite</code>
     <p>If you have a custom domain, I’ll help you wire it in—just mention it in your submission.</p>
   </section>
 
@@ -77,20 +104,25 @@
     <h2>What You Get</h2>
     <ul>
       <li>Responsive design (mobile + desktop)</li>
-      <li>Fast, clean code</li>
+      <li>Fast, clean HTML/CSS code</li>
       <li>GitHub Pages hosting</li>
       <li>Optional custom domain setup</li>
-      <li>Legacy-grade polish and attention to detail</li>
+      <li>Founder-grade polish and attention to detail</li>
     </ul>
   </section>
 
   <section>
-    <h2>Who I Am</h2>
-    <p>I’m Joe—a mutation-grade builder, creative director, and legacy architect. Every site I build is a ritual, every submission a chance to create something unforgettable.</p>
+    <h2>Tech Stack</h2>
+    <p>I build using HTML, CSS, and JavaScript—no bloated frameworks, no unnecessary plugins. Hosting is done via GitHub Pages, which means your site is fast, secure, and free to maintain.</p>
+  </section>
+
+  <section>
+    <h2>Future Plans</h2>
+    <p>I’m working on templates, tutorials, and maybe even a YouTube channel to help others build their own sites. Every submission helps me grow this project into something bigger.</p>
   </section>
 
   <footer>
-    <p>© 2025 Joe's Free Web Services</p>
+    <p>© 2025 Austin’s Free Website Service</p>
   </footer>
 
   <script>
