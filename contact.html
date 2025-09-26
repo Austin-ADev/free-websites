@@ -3,70 +3,110 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Austin's Free Website Service</title>
+  <title>Submit Your Website Idea</title>
   <style>
+    :root {
+      --primary: #4facfe;
+      --accent: #00f2fe;
+      --dark: #222;
+      --light: #f0f4f8;
+      --text: #333;
+      --radius: 8px;
+    }
+
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: #f0f4f8;
-      color: #333;
+      background: var(--light);
+      color: var(--text);
+      scroll-behavior: smooth;
     }
+
     header, footer {
-      background: #222;
+      background: var(--dark);
       color: white;
       text-align: center;
       padding: 1rem;
     }
+
     nav a {
       margin: 0 1rem;
       color: #ddd;
       text-decoration: none;
     }
+
     nav a:hover {
-      color: #fff;
+      color: white;
     }
-    main {
-      padding: 2rem;
-      max-width: 600px;
+
+    section {
+      padding: 3rem 1rem;
+      max-width: 800px;
       margin: auto;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease-out;
     }
-    .example {
-      text-align: center;
-      margin-bottom: 2rem;
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
+
+    h2 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
     .example img {
       width: 100%;
-      border-radius: 8px;
+      border-radius: var(--radius);
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-top: 1rem;
     }
+
     form {
       background: white;
       padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      border-radius: var(--radius);
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
     }
+
     label {
       display: block;
       margin-top: 1rem;
       font-weight: bold;
     }
+
     input, textarea {
       width: 100%;
       padding: 0.75rem;
       margin-top: 0.5rem;
       border: 1px solid #ccc;
-      border-radius: 4px;
+      border-radius: var(--radius);
     }
+
+    input:focus, textarea:focus {
+      outline: none;
+      box-shadow: 0 0 5px var(--primary);
+    }
+
     button {
       margin-top: 1.5rem;
       padding: 0.75rem 1.5rem;
-      background: #4facfe;
+      background: var(--primary);
       color: white;
       border: none;
-      border-radius: 5px;
+      border-radius: var(--radius);
       font-weight: bold;
       cursor: pointer;
+      transition: transform 0.3s;
     }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
     footer {
       font-size: 0.9rem;
     }
@@ -81,13 +121,15 @@
       <a href="about.html">About</a>
     </nav>
   </header>
-  <main>
-    <section class="example">
-      <h2>Example Mockup</h2>
-      <p>Here’s a sample layout to spark ideas.</p>
-      <img src="assets/mockup-example.png" alt="Sample website mockup" />
-    </section>
 
+  <section class="example">
+    <h2>Example Mockup</h2>
+    <p>Here’s a sample layout to spark ideas. You can sketch yours by hand, use a design tool, or describe it in words.</p>
+    <img src="assets/mockup-example.png" alt="Sample website mockup" />
+  </section>
+
+  <section>
+    <h2>Your Submission</h2>
     <form action="https://formspree.io/f/xovkjaoq" method="POST" enctype="multipart/form-data">
       <label for="name">Your Name</label>
       <input type="text" id="name" name="name" required />
@@ -99,15 +141,27 @@
       <textarea id="idea" name="idea" rows="5" required></textarea>
 
       <label for="mockup">Upload a Mockup (optional)</label>
-<input type="file" id="mockup" name="mockup" accept="image/*,pdf" />
+      <input type="file" id="mockup" name="mockup" accept="image/*,pdf" />
 
-<label for="mockupText">Or Paste a Mockup Description / Link</label>
-<textarea id="mockupText" name="mockupText" rows="4" placeholder="Paste a sketch, layout idea, or Figma/Canva link…"></textarea>
+      <label for="mockupText">Or Paste a Mockup Description / Link</label>
+      <textarea id="mockupText" name="mockupText" rows="4" placeholder="Paste a sketch, layout, idea, or Figma/Canva link…"></textarea>
+
       <button type="submit">Submit</button>
     </form>
-  </main>
+  </section>
+
   <footer>
-    <p>© 2025 Austin's Free Web Services</p>
+    <p>© 2025 Austin’s Free Website Service</p>
   </footer>
+
+  <script>
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+      });
+    }, { threshold: 0.1 });
+    sections.forEach(section => observer.observe(section));
+  </script>
 </body>
 </html>
