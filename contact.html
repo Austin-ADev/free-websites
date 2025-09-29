@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Submit Your Website Idea</title>
+  <title>Contact Me — Free Websites By Austin</title>
   <style>
     :root {
       --primary: #4facfe;
@@ -11,7 +11,7 @@
       --dark: #222;
       --light: #f0f4f8;
       --text: #333;
-      --radius: 8px;
+      --radius: 12px;
     }
 
     body {
@@ -22,27 +22,45 @@
       scroll-behavior: smooth;
     }
 
-    header, footer {
-      background: var(--dark);
+    header {
+      background: linear-gradient(to right, var(--primary), var(--accent));
       color: white;
       text-align: center;
-      padding: 1rem;
+      padding: 2rem 1rem;
+      font-size: 1.8rem;
+      font-weight: bold;
+      border-bottom: 4px solid white;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1rem 0;
     }
 
     nav a {
-      margin: 0 1rem;
-      color: #ddd;
+      background: white;
+      color: var(--primary);
+      padding: 0.6rem 1.2rem;
+      border-radius: var(--radius);
       text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
     }
 
     nav a:hover {
-      color: white;
+      transform: scale(1.05);
     }
 
     section {
-      padding: 3rem 1rem;
       max-width: 800px;
-      margin: auto;
+      margin: 2rem auto;
+      background: white;
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
       opacity: 0;
       transform: translateY(40px);
       transition: all 0.8s ease-out;
@@ -58,21 +76,12 @@
       margin-bottom: 1rem;
     }
 
-    .example img {
-      width: 100%;
-      border-radius: var(--radius);
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      margin-top: 1rem;
+    p {
+      color: #555;
+      line-height: 1.6;
     }
 
-    form {
-      background: white;
-      padding: 2rem;
-      border-radius: var(--radius);
-      box-shadow: 0 0 20px rgba(0,0,0,0.05);
-    }
-
-    label {
+    form label {
       display: block;
       margin-top: 1rem;
       font-weight: bold;
@@ -107,37 +116,47 @@
       transform: scale(1.05);
     }
 
+    img {
+      width: 100%;
+      border-radius: var(--radius);
+      margin-top: 1rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
     footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: var(--dark);
+      color: white;
       font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Submit Your Website Idea</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="contact.html">Contact</a>
-      <a href="about.html">About</a>
-    </nav>
-  </header>
+  <header>Free Websites By Austin</header>
 
-  <section class="example">
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="contact.html">Contact me</a>
+    <a href="about.html">About</a>
+  </nav>
+
+  <section>
     <h2>Example Mockup</h2>
     <p>Here’s a sample layout to spark ideas. You can sketch yours by hand, use a design tool, or describe it in words.</p>
     <img src="assets/mockup-example.png" alt="Sample website mockup" />
   </section>
 
   <section>
-    <h2>Your Submission</h2>
+    <h2>Submit Your Idea</h2>
     <form action="https://formspree.io/f/xovkjaoq" method="POST" enctype="multipart/form-data">
-      <label for="name">Your Name</label>
+      <label for="name">Your Name (Full name required.)</label>
       <input type="text" id="name" name="name" required />
 
       <label for="email">Your Email</label>
       <input type="email" id="email" name="email" required />
 
-      <label for="idea">Website Idea</label>
+      <label for="idea">Website Idea (Include Website name, title, ect.)</label>
       <textarea id="idea" name="idea" rows="5" required></textarea>
 
       <label for="mockup">Upload a Mockup (optional)</label>
@@ -151,7 +170,7 @@
   </section>
 
   <footer>
-    <p>© 2025 Austin’s Free Website Service</p>
+    © 2025 Austin’s Free Website Service
   </footer>
 
   <script>
@@ -164,4 +183,3 @@
     sections.forEach(section => observer.observe(section));
   </script>
 </body>
-</html>
