@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Austin’s Free Website Service</title>
+  <title>Free Websites By Austin</title>
   <style>
     :root {
       --primary: #4facfe;
@@ -11,7 +11,7 @@
       --dark: #222;
       --light: #f0f4f8;
       --text: #333;
-      --radius: 8px;
+      --radius: 12px;
     }
 
     body {
@@ -22,50 +22,45 @@
       scroll-behavior: smooth;
     }
 
-    header, footer {
-      background: var(--dark);
-      color: white;
-      text-align: center;
-      padding: 1rem;
-    }
-
-    nav a {
-      margin: 0 1rem;
-      color: #ddd;
-      text-decoration: none;
-    }
-
-    nav a:hover {
-      color: white;
-    }
-
-    .hero {
+    header {
       background: linear-gradient(to right, var(--primary), var(--accent));
       color: white;
       text-align: center;
-      padding: 4rem 1rem;
+      padding: 2rem 1rem;
+      font-size: 1.8rem;
+      font-weight: bold;
+      border-bottom: 4px solid white;
     }
 
-    .hero h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1rem 0;
     }
 
-    .cta {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.75rem 1.5rem;
+    nav a {
       background: white;
-      color: var(--accent);
+      color: var(--primary);
+      padding: 0.6rem 1.2rem;
       border-radius: var(--radius);
       text-decoration: none;
       font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    nav a:hover {
+      transform: scale(1.05);
     }
 
     section {
-      padding: 3rem 1rem;
-      max-width: 900px;
-      margin: auto;
+      max-width: 800px;
+      margin: 2rem auto;
+      background: white;
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
       opacity: 0;
       transform: translateY(40px);
       transition: all 0.8s ease-out;
@@ -81,88 +76,54 @@
       margin-bottom: 1rem;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-
-    .card {
-      background: white;
-      padding: 1.5rem;
-      border-radius: var(--radius);
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
-
-    .faq p {
-      margin-bottom: 1rem;
-    }
-
-    .testimonial {
-      font-style: italic;
-      margin-bottom: 1rem;
+    p {
+      color: #555;
+      line-height: 1.6;
     }
 
     footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: var(--dark);
+      color: white;
       font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Austin’s Free Website Service</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="contact.html">Contact</a>
-      <a href="about.html">About</a>
-    </nav>
-  </header>
+  <header>Free Websites By Austin</header>
 
-  <section class="hero">
-    <h2>Need A Website? I’ll Build It for Free.</h2>
-    <p>Submit your idea, and I’ll deliver a custom site in 7 days. No catch. Just creation.</p>
-    <a href="contact.html" class="cta">Submit Your Idea</a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="contact.html">Contact me</a>
+    <a href="about.html">About</a>
+  </nav>
+
+  <section>
+    <h2>Need a Website?</h2>
+    <p>I’ll build it for free. Just submit your idea, and I’ll deliver a custom site in 7 days. No catch. Just creation.</p>
   </section>
 
   <section>
     <h2>What I Build</h2>
-    <div class="grid">
-      <div class="card"><strong>Portfolios</strong><br>Showcase your work with style.</div>
-      <div class="card"><strong>Blogs</strong><br>Share your thoughts and stories.</div>
-      <div class="card"><strong>Stores</strong><br>Sell products with clean layouts.</div>
-      <div class="card"><strong>Landing Pages</strong><br>Promote events, launches, or ideas.</div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Why Free?</h2>
-    <p>I build websites to help people launch ideas, express themselves, and create legacy-grade artifacts. This is my way of giving back—and building something unforgettable with every submission.</p>
+    <p>Portfolios, blogs, stores, landing pages, and more. Every site is responsive, fast, and hosted for free.</p>
   </section>
 
   <section>
     <h2>How It Works</h2>
-    <ol>
-      <li>You submit your idea or mockup.</li>
-      <li>I build your site in 7 days.</li>
-      <li>You get the URL: <code>austinsites.github.io/yourwebsite</code></li>
-    </ol>
+    <p>1. You submit your idea or mockup.<br>
+       2. I build your site in 7 days.<br>
+       3. You get the URL: <code>austin-adev.github.io/yourwebsite</code></p>
   </section>
 
   <section>
     <h2>Testimonials</h2>
-    <div class="testimonial">“Joe made my portfolio in a week. It looks better than paid services.” — Alex</div>
-    <div class="testimonial">“I submitted a sketch and got a full site. Unreal.” — Maya</div>
-  </section>
-
-  <section class="faq">
-    <h2>FAQ</h2>
-    <p><strong>Is this really free?</strong><br>Yes. No hidden fees, no upsells.</p>
-    <p><strong>Can I use my own domain?</strong><br>Yes—just mention it in your submission.</p>
-    <p><strong>What if I don’t have a mockup?</strong><br>Just describe your idea. I’ll take it from there.</p>
+    <p>“Austin made my portfolio in a week. It looks better than paid services.” — Alex</p>
+    <p>“I submitted a sketch and got a full site. Unreal.” — Maya</p>
   </section>
 
   <footer>
-    <p>© 2025 Austin’s Free Website Service</p>
+    © 2025 Austin’s Free Website Service
   </footer>
 
   <script>
@@ -175,4 +136,3 @@
     sections.forEach(section => observer.observe(section));
   </script>
 </body>
-</html>
